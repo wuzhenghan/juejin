@@ -18,5 +18,13 @@ export default defineNuxtConfig({
       noscript: [],
     },
   },
-  webpack: {},
+  css: ['ant-design-vue/dist/antd.css'],
+  plugins: [
+    './plugins/auto-resolve.client.ts', // only in client side
+    // '~/plugins/bar.server.js', // only in server side
+    // '~/plugins/baz.js', // both client & server
+    // { src: '~/plugins/both-sides.js' },
+    // { src: '~/plugins/client-only.js', mode: 'client' }, // only on client side
+    // { src: '~/plugins/server-only.js', mode: 'server' }, // only on server side
+  ],
 });

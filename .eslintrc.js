@@ -21,6 +21,7 @@ module.exports = {
         trailingComma: 'all',
         arrowParens: 'avoid',
         htmlWhitespaceSensitivity: 'ignore',
+        endOfLine: 'lf',
       },
     ],
   },

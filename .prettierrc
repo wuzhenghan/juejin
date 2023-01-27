@@ -6,5 +6,6 @@
   "semi": true,
   "trailingComma": "all",
   "arrowParens": "avoid",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "endOfLine": "lf"
 }
