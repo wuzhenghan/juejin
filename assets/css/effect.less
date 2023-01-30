@@ -1,0 +1,32 @@
+@import './variables.less';
+
+// 单行文本，超出显示省略
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// 多行文本，超出显示省略 @num代表行数
+.ellipsis-n(@num) {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+  overflow: hidden;
+}
+
+// 鼠标hover效果
+.link-active{
+  &:hover{
+    color: var(--juejin-brand-1-normal);
+  }
+}
+
+.label-active{
+  &:hover{
+    color: var(--juejin-font-1);
+    border-bottom: 2px solid var(--juejin-brand-2-hover);
+  }
+}
