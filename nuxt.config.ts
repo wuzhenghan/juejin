@@ -18,7 +18,12 @@ export default defineNuxtConfig({
       noscript: [],
     },
   },
-  css: ['ant-design-vue/dist/antd.css', '@/assets/css/reset.less'],
+  css: [
+    // antd 全局重置less icon-park字体图标库
+    'ant-design-vue/dist/antd.css',
+    '@/assets/css/reset.less',
+    '@icon-park/vue-next/styles/index.css',
+  ],
   // 自定义导入less文件到vue的style中
   plugins: [
     './plugins/auto-resolve.client.ts', // only in client side
@@ -28,4 +33,6 @@ export default defineNuxtConfig({
     // { src: '~/plugins/client-only.js', mode: 'client' }, // only on client side
     // { src: '~/plugins/server-only.js', mode: 'server' }, // only on server side
   ],
+  // 自动导入vueuse到Nuxt3
+  modules: ['@vueuse/nuxt'],
 });

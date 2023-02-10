@@ -1,20 +1,22 @@
 <template>
   <div class="home-nav">
-    <div class="container">
-      <nav>
-        <a-row type="flex" justify="start" :gutter="16">
-          <a-col :flex="1"><nuxt-link>综合</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>关注</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>后端</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>前端</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>Android</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>iOS</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>人工智能</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>开发工具</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>代码人生</nuxt-link></a-col>
-          <a-col :flex="1"><nuxt-link>阅读</nuxt-link></a-col>
-        </a-row>
-      </nav>
+    <div class="home-nav-wrapper">
+      <div class="container">
+        <nav>
+          <a-row type="flex" justify="start" :gutter="16">
+            <a-col :flex="1"><nuxt-link>综合</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>关注</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>后端</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>前端</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>Android</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>iOS</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>人工智能</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>开发工具</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>代码人生</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link>阅读</nuxt-link></a-col>
+          </a-row>
+        </nav>
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +26,17 @@
 <style lang="less" scoped>
 @import '@/assets/css/effect.less';
 .home-nav {
-  display: fixed;
+  height: 45px;
+  &.hidden {
+    .home-nav-wrapper {
+      transform: translateY(-60px);
+    }
+  }
+}
+.home-nav-wrapper {
+  position: fixed;
+  z-index: var(--juejin-zIndex-1);
+  width: 100%;
   border-bottom: 1px solid #bbb;
   height: 45px;
   background-color: var(--juejin-view);

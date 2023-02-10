@@ -1,9 +1,8 @@
 <template>
   <div>
-    <nuxt-layout name="default">
-      <NuxtPage />
-    </nuxt-layout>
+    <NuxtPage />
   </div>
 </template>
 
+<script setup lang="ts"></script>
 <style lang="less" scoped></style>

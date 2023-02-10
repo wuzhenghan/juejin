@@ -15,6 +15,7 @@
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@types/koa": "^2.13.5",
+    "@vueuse/nuxt": "^9.12.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-nuxt": "^4.0.0",
@@ -26,7 +27,9 @@
     "unplugin-vue-components": "^0.22.12"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
     "@nuxtjs/style-resources": "^1.2.1",
+    "@vueuse/core": "^9.12.0",
     "ant-design-vue": "^3.2.15",
     "less": "^4.1.3"
   }

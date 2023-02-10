@@ -1,10 +1,16 @@
 <template>
   <div class="home-article">
-    <homeChildcmpsCard :head-width="'300px'"></homeChildcmpsCard>
+    <div class="con">
+      <conNav :head-width="'300px'"></conNav>
+      <conCard></conCard>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import conNav from './components/nav.vue';
+import conCard from './components/card.vue';
+</script>
 
 <style lang="less" scoped>
 @import '@/assets/css/variables.less';
@@ -15,5 +21,10 @@
   min-height: 1000px;
   background-color: var(--juejin-view);
   border-radius: 2px;
+  .con {
+    width: 100%;
+    display: inline-block;
+    height: 46px;
+  }
 }
 </style>

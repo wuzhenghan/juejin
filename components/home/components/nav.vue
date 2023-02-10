@@ -13,11 +13,11 @@
         </a-col>
       </a-row>
     </header>
-    <div class="entry-list-wrap"></div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, reactive } from 'vue';
 const headWidth = ref('100%');
 const cardHead = reactive({
   width: headWidth,
@@ -29,19 +29,14 @@ defineProps({
 
 <style lang="less" scoped>
 @import '@/assets/css/effect.less';
-@head-border-color: hsla(0, 0%, 59.2%, 0.2);
-.cmps-card {
-  width: 100%;
+
+header.card-header {
   display: inline-block;
   height: 46px;
-  header.card-header {
-    display: inline-block;
-    height: 46px;
-    font-size: 14px;
-    padding: 11px 12px;
-  }
+  font-size: 14px;
+  padding: 11px 12px;
+  border-bottom: @item-border-bottom;
 }
-
 .ant-row.card-items {
   .ant-col {
     display: flex;
@@ -52,7 +47,15 @@ defineProps({
     &:first-child {
       border-left-color: transparent;
     }
-    .link-active();
+    a {
+      .link-active();
+      color: var(--juejin-font-2);
+    }
+    &:first-child {
+      a {
+        color: var(--juejin-brand-1-normal);
+      }
+    }
   }
 }
 </style>

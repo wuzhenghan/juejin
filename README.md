@@ -1,42 +1,26 @@
-# Nuxt 3 Minimal Starter
+# 仿掘金站点
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### 介绍
 
-## Setup
+利用SSR 服务端渲染掘金站点，选用Nuxt3....
 
-Make sure to install the dependencies:
+### 技术栈
 
-```bash
-# yarn
-yarn install
+框架：Nuxt3
 
-# npm
-npm install
+UI组件库：Ant-design-vue（已配置自动导入）
 
-# pnpm
-pnpm install
+字体图标库：Icon-park
+
+第三方工具库：vueuse（已配置自动导入）
+
+CSS预处理器：less
+
+....
+
+### 运行
+
 ```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
 npm run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
