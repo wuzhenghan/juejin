@@ -1,10 +1,12 @@
 <template>
   <div class="entry-list-wrap">
-    <commonArticleCard v-for="i in 30" :key="i"></commonArticleCard>
+    <commonArticleCard v-for="(item, index) in articleInfo?.data" :key="index" :detail="item"></commonArticleCard>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const articleInfo = useFetch('/api/hello')?.data;
+</script>
 
 <style lang="less" scoped>
 .entry-list-wrap {
