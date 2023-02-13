@@ -31,4 +31,6 @@ fs.createReadStream('server/plugins/juejin.csv')
     useStorage().setItem('postText', postText);
   });
 
-export default defineNitroPlugin(async app => {});
+export default defineNitroPlugin(async app => {
+  console.log(app.hooks.addHooks);
+});

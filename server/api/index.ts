@@ -4,11 +4,5 @@ export default defineEventHandler(async event => {
     console.log('line 5', val);
   });
   const data = await useStorage().getItem('postItem');
-  const text = await useStorage().getItem('postText');
-  return {
-    api: 'works',
-    asd: true,
-    data,
-    text,
-  };
+  return data;
 });
