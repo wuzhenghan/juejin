@@ -8,8 +8,10 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
+    '@typescript-eslint/no-var-requires': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'vue/multi-word-component-names': 'off',
     'prettier/prettier': [
       'error',
       {
