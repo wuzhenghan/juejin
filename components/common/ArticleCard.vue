@@ -1,15 +1,14 @@
 <template>
   <div class="article-card">
     <header>
-      <span class="user">程序员界的小学生</span>
-      <span class="update-time">1天前</span>
-      <label class="field">前端</label>
-      <label class="field">Flutter</label>
+      <span class="user">{{ data.author }}</span>
+      <span class="update-time">{{ data.time }}</span>
+      <label class="field">{{ data.category }}</label>
     </header>
     <div class="content">
-      <nuxt-link class="title" :to="url" target="_blank">Flutter Layout之创建自适应应用程序</nuxt-link>
-      <nuxt-link class="description" :to="url" target="_blank">
-        概述 Flutter提供了从单一代码库构建可移动设备、桌面和Web上运行的应用程序的新机...
+      <nuxt-link class="title ellipsis" :to="url" target="_blank">{{ data['﻿postTitle'] }}</nuxt-link>
+      <nuxt-link class="description ellipsis" :to="url" target="_blank">
+        {{ data.postDiscription }}
       </nuxt-link>
     </div>
     <a-button type="text" class="extra">
@@ -22,6 +21,15 @@
 
 <script setup lang="ts">
 const url = 'https://baidu.com';
+const data: any = ref([]);
+const props = defineProps({
+  detail: {
+    type: Array,
+    default: () => [],
+  },
+});
+data.value = toRefs(props.detail);
+console.log(data.value);
 </script>
 
 <style lang="less" scoped>

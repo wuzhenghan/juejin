@@ -31,9 +31,12 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    // antd 全局重置less icon-park字体图标库
+    // ant-design-vue
     'ant-design-vue/dist/antd.css',
+    // 全局重置less
     '@/assets/css/reset.less',
+    '@/assets/css/effect.less',
+    // icon-park字体图标库
     '@icon-park/vue-next/styles/index.css',
   ],
   // 自定义导入less文件到vue的style中
