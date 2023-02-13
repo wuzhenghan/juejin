@@ -1,5 +1,6 @@
 <template>
   <header class="app-header">
+<<<<<<< HEAD
     <div class="logo">
       <nuxt-link to="/">
         <img src="/images/juejin.png" alt="" />
@@ -18,6 +19,28 @@
         <a-col :flex="1"><nuxt-link>插件</nuxt-link></a-col>
       </a-row>
     </nav>
+=======
+    <header class="app-header-wrapper">
+      <div class="logo">
+        <nuxt-link to="/">
+          <img src="/images/juejin.png" alt="" />
+        </nuxt-link>
+      </div>
+      <nav class="header-nav">
+        <a-row type="flex" justify="start" align="middle" :gutter="24">
+          <a-col :flex="1"><nuxt-link>首页</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>沸点</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>课程</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>直播</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>活动</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>竞赛</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>商城</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>APP</nuxt-link></a-col>
+          <a-col :flex="1"><nuxt-link>插件</nuxt-link></a-col>
+        </a-row>
+      </nav>
+    </header>
+>>>>>>> homepage
   </header>
 </template>
 
@@ -26,7 +49,21 @@
 <style lang="less" scoped>
 @import '@/assets/css/effect.less';
 .app-header {
+<<<<<<< HEAD
   display: fixed;
+=======
+  height: 60px;
+  &.hidden {
+    .app-header-wrapper {
+      transform: translateY(-60px);
+    }
+  }
+}
+.app-header-wrapper {
+  position: fixed;
+  z-index: var(--juejin-zIndex-1);
+  width: 100%;
+>>>>>>> homepage
   border-bottom: 1px solid #bbb;
   height: 60px;
   background-color: var(--juejin-navigation);
