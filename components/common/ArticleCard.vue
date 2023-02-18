@@ -19,7 +19,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts">import { NuxtLink } from '~~/.nuxt/components';
+
 const url = 'https://baidu.com';
 const data: any = ref([]);
 const props = defineProps({
@@ -35,39 +36,31 @@ console.log(data.value);
 <style lang="less" scoped>
 @import '@/assets/css/variables.less';
 @circle-dot: #4e5969;
-
 .article-card {
   width: 100%;
   padding: 12px 20px 0 12px;
   position: relative;
-
   &:hover {
     background-color: #fafafa;
-
     .extra {
       display: block;
     }
   }
-
   header {
     font-size: 14px;
     height: 20px;
-
     > span {
       font-size: 14px;
       padding: 0 7px;
       border-right: 1px solid @head-border-color;
-
       &:first-child {
         padding-left: 0;
       }
     }
-
     > label {
       font-size: 14px;
       padding: 0 7px;
       position: relative;
-
       &::after {
         position: absolute;
         top: 50%;
@@ -80,7 +73,6 @@ console.log(data.value);
         border-radius: 50%;
         background-color: @circle-dot;
       }
-
       &:last-child {
         &::after {
           content: '';
@@ -89,16 +81,13 @@ console.log(data.value);
       }
     }
   }
-
   .content {
     margin-top: 6px;
     padding-bottom: 12px;
     border-bottom: @item-border-bottom;
-
     > a {
       display: block;
     }
-
     .title {
       font-size: 16px;
       line-height: 24px;
@@ -106,14 +95,12 @@ console.log(data.value);
       color: var(--juejin-font-1);
       margin-bottom: 8px;
     }
-
     .description {
       font-size: 13px;
       line-height: 22px;
       color: var(--juejin-font-3);
     }
   }
-
   .extra {
     display: none;
     position: absolute;
@@ -124,3 +111,7 @@ console.log(data.value);
   }
 }
 </style>
+
+function ref(arg0: undefined[]): any {
+  throw new Error("Function not implemented.");
+}
