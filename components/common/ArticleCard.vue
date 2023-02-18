@@ -19,7 +19,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts">import { NuxtLink } from '~~/.nuxt/components';
+
 const url = 'https://baidu.com';
 const data: any = ref([]);
 const props = defineProps({
@@ -110,3 +111,7 @@ console.log(data.value);
   }
 }
 </style>
+
+function ref(arg0: undefined[]): any {
+  throw new Error("Function not implemented.");
+}
