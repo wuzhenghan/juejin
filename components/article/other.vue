@@ -1,6 +1,8 @@
 <template>
   <aside class="home-other">
     <ArticleComponentsWritermessage></ArticleComponentsWritermessage>
+    <ArticleComponentsRelatedarticles></ArticleComponentsRelatedarticles>
+    <ArticleComponentsNavigation></ArticleComponentsNavigation>
   </aside>
 </template>
 
