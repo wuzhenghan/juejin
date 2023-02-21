@@ -87,6 +87,10 @@ p{
             color: #fff;
             border: none;
             background-color: #1d7dfa;
+            cursor: pointer;
+            &:hover{
+                background-color: #388eff;
+            }
         }
         .writer-container-middle-btn2{
             float: right;
@@ -98,6 +102,11 @@ p{
             color: #1e80ff;
             border: 1px solid rgba(30,128,255,0.3);
             background-color: rgba(30,128,255,0.05);
+            cursor: pointer;
+            &:hover{
+                border: 1px solid rgba(30,128,255,0.45);
+                background-color: rgba(30,128,255,0.1);
+            }
         }
     }
     .writer-container-line{
