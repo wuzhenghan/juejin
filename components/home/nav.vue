@@ -25,17 +25,14 @@
 
 <style lang="less" scoped>
 @import '@/assets/css/effect.less';
-
 .home-nav {
   height: 45px;
-
   &.hidden {
     .home-nav-wrapper {
       transform: translateY(-60px);
     }
   }
 }
-
 .home-nav-wrapper {
   position: fixed;
   z-index: var(--juejin-zIndex-1);
@@ -43,30 +40,24 @@
   border-bottom: 1px solid #bbb;
   height: 45px;
   background-color: var(--juejin-view);
-
   .container {
     height: 100%;
-
     nav {
       display: inline-block;
       height: 100%;
       vertical-align: middle;
-
       .ant-row {
         height: 100%;
-
         .ant-col {
           display: flex;
           justify-content: center;
           align-items: center;
           height: 100%;
           cursor: pointer;
-
           a {
             .link-active();
             color: var(--juejin-font-2);
           }
-
           &:first-child {
             a {
               color: var(--juejin-brand-1-normal);

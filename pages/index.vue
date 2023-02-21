@@ -13,37 +13,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const isHidden = ref(false);
-const scrollPosY = ref(0);
 onMounted(() => {
-  // 正常情况下，nuxt拿不到document, 只能在组件挂载后或者process.browser中获取
-  const el = ref(document);
-  /** 建议看官方文档
-   * directions 滚动方向
-   * arrivedState 到达状态
-   */
-  const { directions, arrivedState } = useScroll(el, { behavior: 'smooth' });
-
-  const checkHeaderStatus = useDebounceFn((top: Boolean, bottom: Boolean, topArrived: Boolean) => {
-    if (topArrived) {
-      isHidden.value = false;
-      return;
-    }
-    if (top) {
-      isHidden.value = false;
-    } else if (bottom) {
-      isHidden.value = true;
-    }
-  }, 10);
-  window.onscroll = () => {
-    scrollPosY.value = document.body.scrollTop || document.documentElement.scrollTop;
-    if (scrollPosY.value <= 300) {
-      isHidden.value = false;
-    } else {
-      checkHeaderStatus(directions.top, directions.bottom, arrivedState.top);
-    }
-  };
+  // 顶部导航栏是否隐藏 可惜不是个纯函数
+  scrollHidden(isHidden);
 });
 </script>
 
