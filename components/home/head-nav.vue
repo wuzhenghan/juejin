@@ -5,15 +5,15 @@
         <nav>
           <a-row type="flex" justify="start" :gutter="16">
             <a-col :flex="1"><nuxt-link>综合</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>关注</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>后端</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>前端</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>Android</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>iOS</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>人工智能</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>开发工具</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>代码人生</nuxt-link></a-col>
-            <a-col :flex="1"><nuxt-link>阅读</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/following">关注</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/backend">后端</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/frontend">前端</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/android">Android</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/ios">iOS</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/ai">人工智能</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/freebie">开发工具</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/career">代码人生</nuxt-link></a-col>
+            <a-col :flex="1"><nuxt-link to="/reading">阅读</nuxt-link></a-col>
           </a-row>
         </nav>
       </div>

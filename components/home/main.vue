@@ -1,15 +1,15 @@
 <template>
   <div class="home-article">
     <div class="con">
-      <conNav :head-width="'300px'"></conNav>
-      <conCard></conCard>
+      <Tag :head-width="'300px'"></Tag>
+      <ArticleCard></ArticleCard>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import conNav from './components/nav.vue';
-import conCard from './components/card.vue';
+import Tag from './components/tag.vue';
+import ArticleCard from './components/article-card.vue';
 </script>
 
 <style lang="less" scoped>

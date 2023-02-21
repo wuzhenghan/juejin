@@ -7,7 +7,7 @@
         </nuxt-link>
       </div>
       <nav class="header-nav">
-        <a-row type="flex" justify="start" align="middle" :gutter="24">
+        <a-row ref="target" type="flex" justify="start" align="middle" :gutter="24">
           <a-col :flex="1"><nuxt-link>首页</nuxt-link></a-col>
           <a-col :flex="1"><nuxt-link>沸点</nuxt-link></a-col>
           <a-col :flex="1"><nuxt-link>课程</nuxt-link></a-col>
@@ -23,7 +23,11 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+// 处理标签栏标签过多（> 15）
+// 通过接口判断子元素个数 => 数组长度
+// 思路：拿到数据，对数组进行截取，截取为元素为数组的数组，每个元素显示一行
+</script>
 
 <style lang="less" scoped>
 @import '@/assets/css/effect.less';

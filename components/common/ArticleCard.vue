@@ -1,5 +1,5 @@
 <template>
-  <div class="article-card">
+  <div v-cHover.default class="article-card">
     <header>
       <span class="user">{{ data.author }}</span>
       <span class="update-time">{{ data.time }}</span>
@@ -19,8 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts">import { NuxtLink } from '~~/.nuxt/components';
-
+<script setup lang="ts">
 const url = 'https://baidu.com';
 const data: any = ref([]);
 const props = defineProps({
@@ -41,7 +40,6 @@ console.log(data.value);
   padding: 12px 20px 0 12px;
   position: relative;
   &:hover {
-    background-color: #fafafa;
     .extra {
       display: block;
     }
@@ -112,6 +110,4 @@ console.log(data.value);
 }
 </style>
 
-function ref(arg0: undefined[]): any {
-  throw new Error("Function not implemented.");
-}
+function ref(arg0: undefined[]): any { throw new Error("Function not implemented."); }

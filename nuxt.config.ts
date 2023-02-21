@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   // 自定义导入less文件到vue的style中
   plugins: [
     './plugins/auto-resolve.client.ts', // only in client side
+    './plugins/directives.js', // vue define directives
     // '~/plugins/bar.server.js', // only in server side
     // '~/plugins/baz.js', // both client & server
     // { src: '~/plugins/both-sides.js' },
