@@ -9,9 +9,6 @@ const defineDirective = app => {
     created(_, bindings) {
       // 固定的默认值
       bindings.defaultColor = '#fafafa';
-      if (bindings.value) {
-        bindings.defaultColor = bindings.value;
-      }
     },
     mounted(el, bindings) {
       bindings.lastDefaultColor = el.style.backgroundColor;
@@ -19,10 +16,14 @@ const defineDirective = app => {
         el.addEventListener('mouseover', () => {
           el.style.backgroundColor = bindings.defaultColor;
         });
-        el.addEventListener('mouseout', () => {
-          el.style.backgroundColor = bindings.lastDefaultColor;
+      } else {
+        el.addEventListener('mouseover', () => {
+          el.style.backgroundColor = bindings.value;
         });
       }
+      el.addEventListener('mouseout', () => {
+        el.style.backgroundColor = bindings.lastDefaultColor;
+      });
     },
   });
 };
