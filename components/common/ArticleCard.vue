@@ -1,14 +1,14 @@
 <template>
   <div v-cHover.default class="article-card">
     <header>
-      <span class="user">{{ data.author }}</span>
-      <span class="update-time">{{ data.time }}</span>
-      <label class="field">{{ data.category }}</label>
+      <span class="user">{{ props.detail.author }}</span>
+      <span class="update-time">{{ props.detail.time }}</span>
+      <label class="field">{{ props.detail.category }}</label>
     </header>
     <div class="content">
-      <nuxt-link class="title ellipsis" :to="url" target="_blank">{{ data['﻿postTitle'] }}</nuxt-link>
+      <nuxt-link class="title ellipsis" :to="url" target="_blank">{{ props.detail.postTitle }}</nuxt-link>
       <nuxt-link class="description ellipsis" :to="url" target="_blank">
-        {{ data.postDiscription }}
+        {{ props.detail.postDiscription }}
       </nuxt-link>
     </div>
     <a-button type="text" class="extra">
@@ -21,15 +21,24 @@
 
 <script setup lang="ts">
 const url = 'https://baidu.com';
-const data: any = ref([]);
-const props = defineProps({
-  detail: {
-    type: Array,
-    default: () => [],
-  },
-});
-data.value = toRefs(props.detail);
-console.log(data.value);
+
+interface PostItem {
+  postTitle: string;
+  postDiscription: string;
+  viewNumber: string;
+  like: string;
+  commentNumber: string;
+  author: string;
+  time: string;
+  category: string;
+  postText?: string;
+  postId: string;
+}
+const props = defineProps<{ detail: PostItem }>();
+
+// const data = ref([])
+// props.detail.value = toRefs(props.detail);
+// console.log(data.value);
 </script>
 
 <style lang="less" scoped>
@@ -109,5 +118,3 @@ console.log(data.value);
   }
 }
 </style>
-
-function ref(arg0: undefined[]): any { throw new Error("Function not implemented."); }

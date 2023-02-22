@@ -10,8 +10,4 @@
 
 <script setup>
 // 获取首页推荐文章的数据
-const articleInfo = useFetch('/api/index')?.data;
-provide('articleInfo', articleInfo);
 </script>
-
-<style scoped lang="less"></style>
