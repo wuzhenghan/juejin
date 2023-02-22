@@ -1,12 +1,12 @@
 <template>
   <div class="entry-list-wrap">
-    <commonArticleCard v-for="article in articleData" :key="article.postId" :detail="article"></commonArticleCard>
+    <commonArticleCard v-for="article in data" :key="article.postId" :detail="article"></commonArticleCard>
   </div>
 </template>
 
 <script setup>
 // 接收文章数据
-const articleData = inject('articleInfo');
+const { data } = inject('articleInfo');
 </script>
 
 <style lang="less" scoped>

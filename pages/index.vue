@@ -10,8 +10,6 @@
 
 <script setup>
 // 获取首页推荐文章的数据
-const articleInfo = useFetch('/api/article')?.data;
+const articleInfo = useFetch('/api/postItems');
 provide('articleInfo', articleInfo);
 </script>
-
-<style scoped lang="less"></style>
