@@ -6,8 +6,7 @@
 
 <script setup>
 // 接收文章数据
-const info = inject('articleInfo');
-const articleData = ref(info?.data);
+const articleData = inject('articleInfo');
 </script>
 
 <style lang="less" scoped>

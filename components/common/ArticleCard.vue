@@ -1,5 +1,5 @@
 <template>
-  <div v-cHover.default class="article-card">
+  <div v-if="data && isShow" v-cHover.default class="article-card">
     <header>
       <span class="user">{{ data.author }}</span>
       <span class="update-time">{{ data.time }}</span>
@@ -11,7 +11,7 @@
         {{ data.postDiscription }}
       </nuxt-link>
     </div>
-    <a-button type="text" class="extra">
+    <a-button type="text" class="extra" @click="hiddenData()">
       <template #icon>
         <i-close theme="outline" size="12" fill="#8a919f" />
       </template>
@@ -20,8 +20,13 @@
 </template>
 
 <script setup lang="ts">
+// 跳转地址
 const url = 'https://baidu.com';
+// 渲染数据
 const data: any = ref([]);
+// 是否展示
+const isShow = ref(true);
+// 接收数据
 const props = defineProps({
   detail: {
     type: Array,
@@ -29,7 +34,8 @@ const props = defineProps({
   },
 });
 data.value = toRefs(props.detail);
-console.log(data.value);
+// 隐藏数据
+const hiddenData = () => (isShow.value = false);
 </script>
 
 <style lang="less" scoped>
