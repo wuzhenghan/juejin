@@ -6,8 +6,9 @@
 
 <script setup>
 // 接收文章数据
-const { data } = useFetch('/api/postItems');
-// console.log(data);
+const { data } = useFetch('/api/postItems', { method: 'get' });
+
+console.log(data);
 </script>
 
 <style lang="less" scoped>

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import csv from 'csv-parser';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
 interface PostItem {
   postTitle: string;
@@ -15,10 +15,10 @@ interface PostItem {
   postId: string;
 }
 
-const result: PostItem[] = [];
+const result: Array<PostItem> = [];
 const postText: { [k in string]?: any } = {};
 
-const uri = 'mongodb://localhost:27017/local';
+const uri = 'mongodb://localhost:27017/';
 
 fs.createReadStream('server/plugins/juejin.csv')
   .pipe(csv())
@@ -27,38 +27,56 @@ fs.createReadStream('server/plugins/juejin.csv')
     for (let i = 0; i < result.length; i++) {
       const element = result[i];
       element.postTitle = element['﻿postTitle'];
-      element.postId = `postItem${i}`;
-      postText[`postItem${i}`] = element.postText;
+      postText[i] = element.postText;
       delete element.postText;
       delete element['﻿postTitle'];
-      console.log();
+      element.postId = i.toString();
 
       element.author = element.author ? element.author : '安东尼_';
       element.time = element.time ? element.time : new Date().getDay() + '天前';
       element.category = element.category ? element.category : '前端';
       // 清除文章内容
-      if (i === 0 || i === 18) {
-        console.log('line 37', element);
-      }
     }
     useStorage().setItem('postItem', result);
-    useStorage().setItem('postText', postText);
+    connect();
   });
 
-// try {
-//   const client = await MongoClient.connect(uri);
-//   console.log('Connected to the database');
+async function connect() {
+  try {
+    const client = await MongoClient.connect(uri);
+    const db = client.db('juejin');
+    const user = db.collection('user');
+    const postItem = db.collection('postItem');
+    const postTextC = db.collection('postText');
 
-//   const db = client.db('mydb');
-//   const collection = db.collection('');
+    const user_ = {
+      userName: '用户',
+      pwd: 123456,
+      userId: new ObjectId().toString(),
+    };
 
-//   // Perform database operations here
+    const postTexts = [];
+    const posts = [...result];
 
-//   client.close();
-//   console.log('Connection to the database closed');
-// } catch (error) {
-//   console.log(error);
-// }
+    const str = Object.values(postText)[0].replace(/\n/g, '');
+
+    for (let i = 0; i < 980; i++) {
+      posts.push({ ...result[0] });
+      postTexts.push({ id: 0, postText: str });
+    }
+
+    // 循环添加现有数据
+
+    postItem.insertMany(posts);
+    postTextC.insertMany(postTexts);
+
+    // client.close();
+    // console.log('Connection to the database closed');
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default defineNitroPlugin(async app => {
-  console.log(app.hooks.addHooks);
+  // console.log(app.hooks);
 });
